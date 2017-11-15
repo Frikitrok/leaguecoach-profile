@@ -1,0 +1,476 @@
+@font-face {
+	font-family: 'Mistral-Regular';
+	src: url('../fonts/Mistral-Regular.ttf')  format('truetype');
+}
+
+@font-face {
+	font-family: 'HelveticaNeueCyr-Bold';
+	src: url('../fonts/HelveticaNeueCyr-Bold.otf')  format('opentype');
+}
+
+a {
+	text-decoration: none;
+}
+
+* {
+	font-family: 'HelveticaNeueCyr-Bold';
+	padding: 0;
+	margin: 0;
+	font-size: 12pt;
+	transition: all 0.2s;
+}
+
+
+  html, body {
+  	height: 100%;
+  }
+
+
+header {
+	background-color: #131a1c;
+}
+
+#top-bar {
+	width: calc(100% - 250px);
+	background-color: #131a1c;
+	display: inline-block;
+}
+
+#right-nav {
+	width: calc(100% - 70px);
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-end;
+	list-style-type: none;
+}
+
+#more {
+	height: 50px;
+	margin-top: 15px;
+	margin-left: 20px;
+	float: left;
+	transition: all 0.3s;
+}
+
+#more:hover {
+	transform: scale(1.1);
+}
+
+#logo {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	float: left;
+	width: 250px;
+	height: 80px;
+	background-color: #192025;
+	color: white;
+}
+
+#logo p {
+	display: inline-block;
+	float: left;
+	line-height: 80px;
+	font-size: 13pt;
+}
+
+#logo img {
+	height: calc(100% - 10px);
+	margin-top: 5px;
+	margin-left: 20px;
+}
+
+.header-item {
+	position: relative;
+	color: #c9c8c8;
+}
+
+.header-item  a {
+	height: 80px;
+	line-height: 80px;
+	padding:  0 20px 0 20px;
+	font-size: 16pt;
+	color: inherit;
+}
+
+.header-item:hover {
+	color: #73ff76;
+}
+
+.header-item:hover:after {
+	/*border-bottom: 3px solid #73ff76;
+	height: 77px;
+	transition: all 0.5s;*/
+	animation: header-animation 0.5s both;
+	width: 0px;
+  	height: 0px;
+	border-bottom: 3px solid #73ff76;
+	position: absolute;
+	content: "";
+	top: 77px;
+	left: 0px;
+}
+
+@keyframes header-animation {
+    from {
+        width: 0%;   
+        left: 50%;
+    }
+    to {
+        width: 100%;
+        left: 0%;
+    }
+  }
+
+#main {
+	min-height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+#sidebar {
+	width: 250px;
+	min-height: calc(100% - 20px);
+	background-color: #222d32;
+	position: absolute;
+	padding-top: 20px;
+	list-style-type: none;
+	text-align: center;
+	transition: all 1s;
+	left: 0;
+}
+
+#sidebar nav ul li {
+	padding: 10px 0 10px 0;
+	border-top: 1px solid #131a1d;
+	position: relative;
+}
+
+#sidebar nav ul li:last-child {
+	border-bottom: 1px solid #131a1d;
+}
+
+#sidebar nav ul li a {
+	font-size: 14pt;
+	font-style: 'HelveticaNeueCyr';
+}
+
+#sidebar nav ul li:hover {
+	background-color: #131a1d;
+}
+
+#sidebar nav ul li:hover:after {
+	animation: header-animation 0.5s both;
+	width: 0px;
+  	height: 0px;
+	border-bottom: 1px solid #73ff76;
+	position: absolute;
+	content: "";
+	top: 40px;
+	left: 0px;
+}
+
+
+#sidebar a {
+	color: white;
+}
+
+#content {
+	width: calc(100% - 250px);
+	min-height: 100%;
+	margin-left: 250px;
+	transition: all 1s;
+}
+
+#stats {
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	/*justify-content: center;*/
+}
+
+#elo-wrapper {
+	width: calc(100% - 80px - 250px - 266.66px);
+	display: flex;
+	justify-content: center;
+}
+
+#elo-wrapper img {
+	height: 250px;
+	margin-top: 70px;
+	margin-bottom: 70px;
+}
+
+#roles {
+	width: 80px;
+	height: 400px;
+}
+
+.role-back {
+	width: 100%;
+	height: 80px;
+	background-color: red;
+	display: flex;
+	justify-content: center;
+}
+
+.role-back:hover {
+	box-shadow: inset 0px -10px 16px 0px rgba(50, 50, 50, 0.75);
+}
+
+.role-back img {
+	width: 70px;
+	height: 57px;
+	margin-top: 10px;
+}
+
+
+#prof-stats {
+	width: 250px;
+	height: 400px;
+	background-color: #335e74;
+}
+
+#prof-stats ul li {
+	list-style-type: none;
+	background-color: #244a5d;
+	padding: 10px 0px 10px 0px;
+	text-align: center;
+	color: white;
+	border-radius: 25px;
+	margin: 10px 20px 10px 20px;
+}
+
+#prof-stats ul li:hover {
+	background-color: #1d3f51;
+}
+
+#heroes {
+	width: 266.66px;
+}
+
+#heroes img {
+	height: 133.33px;
+	float: left;
+}
+
+.wrapper{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+.adding {
+	width: 370px;
+	height: 60px;
+	background-color: #21df69;
+	color: white;
+	text-align: center;
+	line-height: 60px;
+	border-radius: 30px;
+	position: relative;
+	font-size: 14pt;
+	padding-right:30px;
+	margin-top: 20px;
+}
+
+.adding:hover {
+	transform: scale(1.05);
+}
+
+.adding img {
+	height: 56px;
+	margin-top: 2px;
+	position: absolute;
+	right: 2px;
+}
+
+#timeline {
+	width: calc(100% - 100px);
+	padding: 0 50px 50px 50px;
+	background-color: #477993;
+	margin-top: 50px;
+	padding-bottom: 0px;
+}
+
+#timeline-block {
+	width: calc(100% - 40px);
+	background-color: #202a2f;
+	padding: 20px;
+	position: relative;
+	top: -30px;
+	border-radius: 6px;
+}
+
+.time-slot {
+	background-color: white;
+	width: 100%;
+	padding: 15px;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.time-slot:last-child {
+	margin-bottom: 0px;
+}
+
+.time-slot img {
+	height: 30px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+
+.time-slot img:hover {
+	transform: scale(1.2);
+}
+
+#seminar-block {
+	margin-top: 20px;
+	width: calc(100% - 40px);
+	padding: 0 20px;
+}
+
+.seminar {
+	width: calc(100% - 10px);
+	height: 200px;
+	padding: 5px;
+	background-color: #202a2f;
+	position: relative;
+	margin-bottom: 10px;
+}
+
+.seminar:last-child {
+	margin-bottom: 0px;
+}
+
+.seminar img {
+	height: 100%;
+	background-color: white;
+	float: left;
+}
+
+.seminar div {
+	float: left;
+	width: calc(100% - 231px);
+	color: white;
+	padding: 0 10px;
+	text-align: center;
+	font-size: 14pt;
+	height: 40px;
+	line-height: 40px;
+
+}
+
+#desc {
+	padding-top: 15px;
+	height: 65px;
+	line-height: 25px;
+}
+
+.seminar .edit {
+	position: absolute;
+	right: 10px;
+	height: 30px;
+	top: 10px;
+	background-color: transparent;
+}
+
+.edit:hover {
+	transform: scale(1.15);
+}
+
+.seminar .delete:hover {
+	background-color: #c23927 !important;
+}
+
+@media all and (max-width: 980px) {
+
+	#top-bar {
+		width: 100%;
+	}
+
+	#right-nav {
+		flex-flow: column wrap;
+    	padding: 0;
+    	width: 100%;
+	}
+
+	#more {
+		position: absolute;
+		top: 0px;
+	}
+
+  /* We tell both sidebars to share a row */
+  	#logo {
+		width: 100%;
+	}
+
+	#logo p {
+		font-size: 6.5vw;
+		margin-left: 30px;
+	}
+
+	.header-item {
+		text-align: center;
+		padding: 0;
+	}
+
+	.header-item a {
+		font-size: 12pt;
+		line-height: 60px;
+	}
+
+	.header-item:hover:after {
+		top: 57px;
+	}
+
+	#sidebar {
+		left: 	-100%;
+		width: 	100%;
+		min-height: 230px;
+	}
+
+	#content {
+		margin: 0px;
+		width: 100%;
+		float: left;
+	}
+
+	#stats {
+		flex-flow: row wrap;
+		padding: 0px;
+		/*justify-content: center;*/
+	}
+
+	#elo-wrapper {
+		width: 100%;
+	}
+
+
+	#roles {
+		width: 33.3%;
+	}
+
+	#prof-stats {
+		width: 66.7%;
+		height: 400px;
+		float: left;
+		background-color: #335e74;
+	}
+
+	#heroes {
+		width: 100%;
+	}
+
+	#heroes img {
+		width: 33.33%;
+		height: auto;
+	}
+
+	#desc {
+		font-size: 12pt;
+	}
+
+
+}
